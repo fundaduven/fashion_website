@@ -1,25 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./ContactForm.css";
 
 const ContactForm = ({ status, message, onValidated }) => {
-  let email, name, surname, nmb;
   const isSubmitting = status === "sending";
-  /* if (status === "success") {
-    email = "";
-    name = "";
-    surname = "";
-    nmb = "";
-  } */
+
+  useEffect(() => {
+    if (status === "success") {
+      setFirstname("");
+      setLastname("");
+      setEmail("");
+      setNMB("");
+    }
+  }, [status]);
+
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [email, setEmail] = useState("");
+  const [nmb, setNMB] = useState("");
 
   const submit = (event) => {
     event.preventDefault();
     email &&
-      email.value.indexOf("@") > -1 &&
+      email.indexOf("@") > -1 &&
       onValidated({
-        EMAIL: email.value,
-        FNAME: name.value,
-        LNAME: surname.value,
-        PHONE: nmb.value,
+        EMAIL: email,
+        FNAME: firstname,
+        LNAME: lastname,
+        PHONE: nmb,
       });
   };
 
@@ -40,7 +47,8 @@ const ContactForm = ({ status, message, onValidated }) => {
             id="fname"
             name="firstname"
             placeholder="Your name is ..."
-            ref={(node) => (name = node)}
+            value={firstname}
+            onChange={(event) => setFirstname(event.target.value)}
           ></input>
           <label htmlFor="lname">Last Name </label>
           <input
@@ -48,7 +56,8 @@ const ContactForm = ({ status, message, onValidated }) => {
             id="lname"
             name="lastname"
             placeholder="Your last name is ..."
-            ref={(node) => (surname = node)}
+            value={lastname}
+            onChange={(event) => setLastname(event.target.value)}
           ></input>
           <label htmlFor="email">E-mail</label>
           <input
@@ -56,7 +65,8 @@ const ContactForm = ({ status, message, onValidated }) => {
             id="email"
             name="email"
             placeholder="name@example.com"
-            ref={(node) => (email = node)}
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
           ></input>
           <label htmlFor="phone">Phone number</label>
           <br />
@@ -65,7 +75,8 @@ const ContactForm = ({ status, message, onValidated }) => {
             id="telNo"
             name="telNo"
             placeholder="+49 1234 567 8990"
-            ref={(node) => (nmb = node)}
+            value={nmb}
+            onChange={(event) => setNMB(event.target.value)}
           ></input>
           <br />
           <input

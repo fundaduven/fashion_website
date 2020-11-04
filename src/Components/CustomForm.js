@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 const CustomForm = ({ status, message, onValidated }) => {
-  let email;
+  useEffect(() => {
+    if (status === "success") {
+      setEmail("");
+    }
+  }, [status]);
+
+  const [email, setEmail] = useState("");
+
   const submit = (event) => {
     event.preventDefault();
     email &&
-      email.value.indexOf("@") > -1 &&
+      email.indexOf("@") > -1 &&
       onValidated({
         EMAIL: email.value,
       });
@@ -52,7 +59,8 @@ const CustomForm = ({ status, message, onValidated }) => {
                       type="email"
                       className="form-control form-control-lg"
                       placeholder="Enter your email..."
-                      ref={(node) => (email = node)}
+                      value={email}
+                      onChange={(event) => setEmail(event.target.value)}
                     ></input>
                   </div>
                   <div className="col-12 col-md-3">
