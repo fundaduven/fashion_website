@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/fashion_website/static/css/main.3ec3d55d.chunk.css",
+    "main.js": "/fashion_website/static/js/main.8d70c79f.chunk.js",
+    "main.js.map": "/fashion_website/static/js/main.8d70c79f.chunk.js.map",
+    "runtime-main.js": "/fashion_website/static/js/runtime-main.ad1567e5.js",
+    "runtime-main.js.map": "/fashion_website/static/js/runtime-main.ad1567e5.js.map",
+    "static/js/2.099555d9.chunk.js": "/fashion_website/static/js/2.099555d9.chunk.js",
+    "static/js/2.099555d9.chunk.js.map": "/fashion_website/static/js/2.099555d9.chunk.js.map",
+    "static/js/3.233af6a1.chunk.js": "/fashion_website/static/js/3.233af6a1.chunk.js",
+    "static/js/3.233af6a1.chunk.js.map": "/fashion_website/static/js/3.233af6a1.chunk.js.map",
+    "index.html": "/fashion_website/index.html",
+    "static/css/main.3ec3d55d.chunk.css.map": "/fashion_website/static/css/main.3ec3d55d.chunk.css.map",
+    "static/js/2.099555d9.chunk.js.LICENSE.txt": "/fashion_website/static/js/2.099555d9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ad1567e5.js",
+    "static/js/2.099555d9.chunk.js",
+    "static/css/main.3ec3d55d.chunk.css",
+    "static/js/main.8d70c79f.chunk.js"
+  ]
+}
