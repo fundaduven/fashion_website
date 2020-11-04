@@ -4,12 +4,12 @@ import "./ContactForm.css";
 const ContactForm = ({ status, message, onValidated }) => {
   let email, name, surname, nmb;
   const isSubmitting = status === "sending";
-  if (status === "success") {
+  /* if (status === "success") {
     email = "";
     name = "";
     surname = "";
     nmb = "";
-  }
+  } */
 
   const submit = (event) => {
     event.preventDefault();
@@ -31,22 +31,10 @@ const ContactForm = ({ status, message, onValidated }) => {
         padding: 10,
       }}
     >
-      {status === "error" && (
-        <div
-          style={{ color: "red" }}
-          dangerouslySetInnerHTML={{ __html: message }}
-        />
-      )}
-      {status === "success" && (
-        <div
-          style={{ color: "green" }}
-          dangerouslySetInnerHTML={{ __html: message }}
-        />
-      )}
       <div className="contactform">
         <h1>Let's Get In Touch!</h1>
         <form>
-          <label for="fname">First Name </label>
+          <label htmlFor="fname">First Name </label>
           <input
             type="text"
             id="fname"
@@ -54,7 +42,7 @@ const ContactForm = ({ status, message, onValidated }) => {
             placeholder="Your name is ..."
             ref={(node) => (name = node)}
           ></input>
-          <label for="lname">Last Name </label>
+          <label htmlFor="lname">Last Name </label>
           <input
             type="text"
             id="lname"
@@ -62,7 +50,7 @@ const ContactForm = ({ status, message, onValidated }) => {
             placeholder="Your last name is ..."
             ref={(node) => (surname = node)}
           ></input>
-          <label for="email">E-mail</label>
+          <label htmlFor="email">E-mail</label>
           <input
             type="text"
             id="email"
@@ -70,7 +58,7 @@ const ContactForm = ({ status, message, onValidated }) => {
             placeholder="name@example.com"
             ref={(node) => (email = node)}
           ></input>
-          <label for="phone">Phone number</label>
+          <label htmlFor="phone">Phone number</label>
           <br />
           <input
             type="tel"
@@ -82,11 +70,25 @@ const ContactForm = ({ status, message, onValidated }) => {
           <br />
           <input
             type="submit"
-            value={isSubmitting ? "sending" : "submit"}
+            value={isSubmitting ? "Sending" : "Submit"}
             disabled={isSubmitting}
             onClick={submit}
           ></input>
         </form>
+      </div>
+      <div className="formMsg">
+        {status === "error" && (
+          <div
+            style={{ color: "red" }}
+            dangerouslySetInnerHTML={{ __html: message }}
+          />
+        )}
+        {status === "success" && (
+          <div
+            style={{ color: "green" }}
+            dangerouslySetInnerHTML={{ __html: message }}
+          />
+        )}
       </div>
     </div>
   );

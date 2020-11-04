@@ -13,6 +13,7 @@
 
 #dress4 {
   background-image: url("https://images.unsplash.com/photo-1567777301743-3b7ef158aadf?ixlib=rb-1.2.1&auto=format&fit=crop&w=710&q=80");
+  background-position: center;
 }
 
 #dress5 {
@@ -21,6 +22,7 @@
 
 #dress6 {
   background-image: url("https://images.unsplash.com/photo-1568252542512-9fe8fe9c87bb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
+  background-position: center;
 }
 #dress:hover,
 #dress2:hover,

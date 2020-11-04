@@ -61,7 +61,7 @@ const CustomForm = ({ status, message, onValidated }) => {
                       className="signupbtn btn btn-block btn-lg btn-primary"
                       onClick={submit}
                     >
-                      Sign up!
+                      Subscribe
                     </button>
                   </div>
                 </div>
