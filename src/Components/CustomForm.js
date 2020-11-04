@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./CustomForm.css";
 
 const CustomForm = ({ status, message, onValidated }) => {
   useEffect(() => {
@@ -26,20 +27,6 @@ const CustomForm = ({ status, message, onValidated }) => {
         padding: 10,
       }}
     >
-      {status === "sending" && <div style={{ color: "blue" }}>sending...</div>}
-      {status === "error" && (
-        <div
-          style={{ color: "red" }}
-          dangerouslySetInnerHTML={{ __html: message }}
-        />
-      )}
-      {status === "success" && (
-        <div
-          style={{ color: "green" }}
-          dangerouslySetInnerHTML={{ __html: message }}
-        />
-      )}
-
       <section className="call-to-action text-white text-center">
         <div className="overlay"></div>
         <div className="container">
@@ -78,6 +65,23 @@ const CustomForm = ({ status, message, onValidated }) => {
           </div>
         </div>
       </section>
+      <div className="subscribe">
+        {status === "sending" && (
+          <div style={{ color: "blue" }}>sending...</div>
+        )}
+        {status === "error" && (
+          <div
+            style={{ color: "red" }}
+            dangerouslySetInnerHTML={{ __html: message }}
+          />
+        )}
+        {status === "success" && (
+          <div
+            style={{ color: "green" }}
+            dangerouslySetInnerHTML={{ __html: message }}
+          />
+        )}
+      </div>
     </div>
   );
 };
