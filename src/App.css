@@ -36,3 +36,34 @@
     transform: rotate(360deg);
   }
 }
+
+.bgcolor {
+  background-color: #eaedf0;
+}
+
+h2 {
+  font-size: 30px;
+  color: #b78a3f;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+
+p {
+  color: #8da07a;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.signupbtn {
+  background-color: #8da07a;
+  border-color: #8da07a;
+}
+
+.signupbtn:hover {
+  background-color: cadetblue;
+  border-color: cadetblue;
+}
+
+.newsletter {
+  padding-top: 2rem;
+}
